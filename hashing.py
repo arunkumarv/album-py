@@ -13,5 +13,4 @@ def md5(fname):
 for root, dirs, files in os.walk(the_folder):
     for file in files:
         source = root+'/'+file
-        print(md5(source))
-        print(source)
+        print(md5(source)+'\t'+source)
