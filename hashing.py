@@ -1,7 +1,8 @@
 import hashlib
 import os
 
-the_folder = "/Users/akv/Personal"
+# the_folder = "/Users/akv/Personal"
+# the_folder = "./test"
 
 def md5(fname):
     hash_md5 = hashlib.md5()
@@ -10,7 +11,16 @@ def md5(fname):
             hash_md5.update(chunk)
     return hash_md5.hexdigest()
 
-for root, dirs, files in os.walk(the_folder):
-    for file in files:
-        source = root+'/'+file
-        print(md5(source)+'\t'+source)
+def get_hash_map_list(the_folder):
+    hash_map_list = []
+    for root, dirs, files in os.walk(the_folder):
+        for file in files:
+            source = root+'/'+file        
+            hash_map_list.append(dict([
+                ("source", source ),
+                ("hash", md5(source))
+            ]))
+    return hash_map_list
+
+
+        
