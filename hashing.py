@@ -1,9 +1,6 @@
 import hashlib
 import os
 
-# the_folder = "/Users/akv/Personal"
-# the_folder = "./test"
-
 def md5(fname):
     hash_md5 = hashlib.md5()
     with open(fname, "rb") as f:
