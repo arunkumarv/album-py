@@ -26,4 +26,4 @@ def text_from_image(file):
 
 	return content
 
-print(text_from_image("./test/IMG_3968.jpeg"))
+print(text_from_image("/Users/akv/Desktop/mypic.png"))
