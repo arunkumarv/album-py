@@ -3,7 +3,7 @@ from move_duplicates import move_duplicates
 import sys, getopt
 
 def help():
-   print ('main.py -i <source folder> -o <destination folder>')
+   print ('python main.py -i <source folder> -o <destination folder>')
    print ('eg: main.py /Users/akv/MyPictures -o /Users/akv/Duplicates')
 
 def main(argv):

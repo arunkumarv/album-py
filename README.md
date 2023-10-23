@@ -9,8 +9,8 @@ This repo has programs to
 
 ### move duplicates
 
-`python move_duplicates.py source_folder destination_folder`
-`./main.py -i /Users/akv/Desktop/test -o /Users/akv/Desktop/test/deleted` - this command if fails check the main.py python path.
+`python main.py -i <source folder> -o <destination folder>`\
+`eg: main.py /Users/akv/MyPictures -o /Users/akv/Duplicates` - this command if fails check the main.py python path.
 
 ### doc search
 
