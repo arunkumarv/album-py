@@ -1,23 +1,18 @@
 import os
-import random
-import string
 
-the_folder = "/Users/akv/Personal"
-#the_folder = "/Users/akv/Desktop/album-py/test"
+def get_unique_destination_path(destination_folder, filename):
+    """
+    Returns a filepath in destination_folder for filename.
+    If a file with the same name already exists in destination_folder,
+    appends _1, _2, etc., to avoid overwriting.
+    """
+    base_name, extension = os.path.splitext(filename)
+    counter = 1
+    target_path = os.path.join(destination_folder, filename)
+    
+    while os.path.exists(target_path):
+        target_path = os.path.join(destination_folder, f"{base_name}_{counter}{extension}")
+        counter += 1
+        
+    return target_path
 
-s = string.ascii_lowercase
-
-def randomString(length):
-    c = ''.join(random.choice(s) for i in range(length))
-    return c
-
-def random_names(foler_path):
-    for root, dirs, files in os.walk(the_folder):
-        for file in files:
-            filename, file_extension = os.path.splitext(file)
-            source = root + '/' + file
-            destination = root + '/' + randomString(10) + file_extension
-            try:
-                os.rename(source, destination)
-            except PermissionError:
-                print(source, destination)
